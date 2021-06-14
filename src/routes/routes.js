@@ -1,4 +1,4 @@
-import { Router } from 'express';
+const { Router } = require('express');
 import instagram from '../instagram';
 
 const routes = Router();
@@ -20,5 +20,4 @@ routes.get('/profile/:id', async (req, res) => {
  });
 
 
-
-export default routes;
+module.exports = routes;

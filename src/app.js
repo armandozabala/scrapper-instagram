@@ -1,5 +1,5 @@
-import express from 'express';
-import Routes from './routes/routes';
+const express  = require('express');
+const Routes = require('./routes/routes');
 
 const app = express();
 
@@ -9,6 +9,6 @@ app.get('/',(req,resp) => {
 
 app.use(Routes)
 
-export default app;
+module.exports = app;
 
 
