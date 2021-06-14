@@ -1,5 +1,5 @@
 import app from "./app";
 
-app.listen(app.get('port'));
+app.listen( process.env.PORT || 3000);
 console.log('Server port -- ', app.get('port'))
 

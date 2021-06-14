@@ -4,8 +4,6 @@ import Routes from './routes/routes';
 
 const app = express();
 
-app.set('port', config.port || 3000);
-
 
 app.get('/',(req,resp) => {
     resp.json({ msg: 'holis'})
