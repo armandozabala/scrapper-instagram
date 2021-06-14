@@ -2,12 +2,11 @@ const express  = require('express');
 const Routes = require('./routes/routes');
 const cors = require('cors');
 const instagram = require('./instagram');
-const axios = require('axios');
 const app = express();
 
 app.use(cors())
 
-app.get('/:id', async (req,res) => {
+app.get('/', async (req,res) => {
 
     instagram.getProfile('armandozabala86').then((resp) => {
         res.send(resp)
