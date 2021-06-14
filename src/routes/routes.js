@@ -3,13 +3,17 @@ const instagram = require('../instagram');
 
 const routes = Router();
 
-routes.get('/profile/:id', async (req, res) => {
+routes.get('/profile/:id',  (req, res) => {
 
     let id = req.params.id
     console.log(id);
     try{
-        const resp = await instagram.getProfile(id);
-        res.send(resp)
+        instagram.getProfile(id).then((resp) => {
+            res.send(resp)
+        }).catch((err) =>{
+            console.log(err);
+        })
+      
     }catch(err){
         console.log("error"+err)
     }
