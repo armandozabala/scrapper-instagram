@@ -1,5 +1,5 @@
 const { Router } = require('express');
-import instagram from '../instagram';
+const {instagram} = require('../instagram');
 
 const routes = Router();
 
