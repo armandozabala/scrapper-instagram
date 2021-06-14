@@ -6,12 +6,12 @@ const routes = Router();
 routes.get('/profile/:id', async (req, res) => {
 
     let id = req.params.id
-   
+    console.log(id);
     try{
         const resp = await instagram.getProfile(id);
         res.send(resp)
     }catch(err){
-        console.log(err)
+        console.log("error"+err)
     }
    
  });
