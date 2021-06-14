@@ -1,13 +1,21 @@
 const express  = require('express');
 const Routes = require('./routes/routes');
 const cors = require('cors');
+const instagram = require('./instagram');
 
 const app = express();
 
 app.use(cors())
 
-app.get('/',(req,resp) => {
-    resp.json({ msg: 'holis'})
+app.get('/',(req,res) => {
+    
+    instagram.getProfile('armandozabala86').then((resp) => {
+        res.send(resp)
+    }).catch((err) =>{
+        console.log(err);
+        res.send({msg: 'Holis Instagram 😌'})
+    })
+   
 });
 
 app.use(Routes)
